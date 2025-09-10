@@ -17,14 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Toggle theme
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark")
-    const isDark = document.body.classList.contains("dark")
-    localStorage.setItem("theme", isDark ? "dark" : "light")
-    themeToggle.textContent = isDark ? "☀️" : "🌙"
-  })
-
   // Load extensions
   chrome.management.getAll((extensions) => {
     extensions

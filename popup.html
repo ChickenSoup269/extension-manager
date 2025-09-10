@@ -6,82 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extension Manager</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            width: 400px;
-            min-height: 500px;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-        }
 
-        .theme-toggle {
-            cursor: pointer;
-        }
-
-        .extension-item {
-            transition: background-color 0.2s ease;
-        }
-
-        .extension-item:hover {
-            background-color: #f1f5f9;
-        }
-
-        .dark .extension-item:hover {
-            background-color: #374151;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 40px;
-            height: 20px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 20px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked+.slider {
-            background-color: #3b82f6;
-        }
-
-        input:checked+.slider:before {
-            transform: translateX(20px);
-        }
     </style>
 </head>
 
 <body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
     <div class="p-4">
-        <div class="flex justify-between items-center mb-4">
+        <div class="title mb-4">
             <h1 class="text-xl font-bold">Extension Manager</h1>
-            <button id="themeToggle" class="theme-toggle text-2xl" title="Toggle Theme">🌙</button>
         </div>
         <div id="extensionList" class="space-y-2"></div>
     </div>
